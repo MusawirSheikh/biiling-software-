@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple Billing System</title>
+  <script type="module" crossorigin src="/assets/index-B7CGqzCJ.js"></script>
+  <link rel="stylesheet" crossorigin href="/assets/index-DvdvpwGx.css">
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>Invoice</h1>
+            <div class="invoice-info">
+                <input type="text" id="invoiceNumber" value="INV-001" class="invoice-number">
+                <input type="date" id="invoiceDate" class="invoice-date">
+            </div>
+        </div>
+
+        <table id="invoiceTable">
+            <thead>
+                <tr>
+                    <th>Description</th>
+                    <th>Qty</th>
+                    <th>Unit Price</th>
+                    <th>Discount %</th>
+                    <th>Total</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody id="invoiceBody">
+            </tbody>
+        </table>
+
+        <button onclick="window.handleRowChange()" class="add-btn">+ Add Item</button>
+
+        <div class="summary">
+            <div class="summary-item">
+                <label>Previous Balance:</label>
+                <input type="number" id="prevBalance" value="0" onchange="window.handleRowChange(this)">
+            </div>
+            <div class="summary-item">
+                <label>Subtotal:</label>
+                <span id="subtotal">$0.00</span>
+            </div>
+            <div class="summary-item">
+                <label>Total Discount:</label>
+                <span id="totalDiscount">$0.00</span>
+            </div>
+            <div class="summary-item total">
+                <label>Grand Total:</label>
+                <span id="grandTotal">$0.00</span>
+            </div>
+        </div>
+
+        <div class="actions">
+            <button onclick="window.printInvoice()" class="print-btn">Print Invoice</button>
+            <button onclick="window.saveInvoice()" class="save-btn">Save Invoice</button>
+        </div>
+    </div>
+</body>
+</html>

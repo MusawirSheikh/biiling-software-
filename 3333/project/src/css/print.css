@@ -1,0 +1,28 @@
+@media print {
+    body {
+        background: white;
+        padding: 0;
+    }
+    
+    .container {
+        box-shadow: none;
+    }
+    
+    .add-btn,
+    .delete-btn,
+    .action-buttons,
+    .button-group {
+        display: none !important;
+    }
+
+    .customer-info,
+    .summary {
+        background: none !important;
+    }
+
+    th {
+        background-color: #f8f9fa !important;
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+    }
+}

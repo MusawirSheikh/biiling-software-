@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Enhanced Billing System</title>
+    <link rel="stylesheet" href="src/css/styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <div class="company-info">
+                <h2>YASIR AUTOS & TRADERS</h2>
+                <p>SHOP # 5 YASIR AUTOS KIRAN HOSPITAL ROAD </p>
+                <!-- <p>City, Country</p> -->
+                <p>03172100027</p>
+            </div>
+            <div class="invoice-info">
+                <h1>Invoice</h1>
+                <input type="text" id="invoiceNumber" value="INV-001">
+                <input type="date" id="invoiceDate">
+            </div>
+        </div>
+
+        <div class="customer-info">
+            <h3>Bill To:</h3>
+            <input type="text" placeholder="Customer Name" id="customerName">
+            <textarea placeholder="Customer Address" id="customerAddress"></textarea>
+        </div>
+
+      
+
+        <table id="invoiceTable">
+            <thead>
+                <tr>
+                    <th>Description</th>
+                    <th>Qty</th>
+                    <th>Unit Price</th>
+                    <th>Discount %</th>
+                    <th>Unit Discount</th>
+                    <th>Total</th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody id="invoiceBody">
+            </tbody>
+        </table>
+
+        <div class="button-group">
+            <button id="addItem" class="add-btn btn">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <line x1="12" y1="5" x2="12" y2="19"></line>
+                    <line x1="5" y1="12" x2="19" y2="12"></line>
+                </svg>
+                Add Item
+            </button>
+        </div>
+
+        <div class="summary">
+            <div class="summary-item">
+                <label>Previous Balance:</label>
+                <input type="number" id="prevBalance" value="0" min="0" step="0.01">
+            </div>
+            <div class="summary-item">
+                <label>Subtotal:</label>
+                <span id="subtotal">0.00</span>
+            </div>
+            <div class="summary-item">
+                <label>Total Discount:</label>
+                <span id="totalDiscount">0.00</span>
+            </div>
+            <div class="summary-item total">
+                <label>Grand Total:</label>
+                <span id="grandTotal">0.00</span>
+            </div>
+        </div>
+
+        <div class="action-buttons">
+            <button onclick="window.printInvoice()" class="btn print-btn">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <polyline points="6 9 6 2 18 2 18 9"></polyline>
+                    <path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"></path>
+                    <rect x="6" y="14" width="12" height="8"></rect>
+                </svg>
+                Print
+            </button>
+            <button onclick="window.cancelInvoice()" class="btn cancel-btn">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <line x1="18" y1="6" x2="6" y2="18"></line>
+                    <line x1="6" y1="6" x2="18" y2="18"></line>
+                </svg>
+                Cancel
+            </button>
+        </div>
+    </div>
+
+    <script type="module" src="src/js/main.js"></script>
+</body>
+</html>
